@@ -1,0 +1,52 @@
+{
+  "api": [
+    {
+      "id": 1,
+      "name": "Python",
+      "lesson": 10,
+      "level": "Beginner",
+      "price": 60,
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "name": "JavaScript",
+      "lesson": 15,
+      "level": "Advanced",
+      "price": 100,
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "name": "Java",
+      "lesson": 5,
+      "level": "Expert",
+      "price": 150,
+      "rating": 4.3
+    },
+    {
+      "id": 4,
+      "name": "C++",
+      "lesson": 20,
+      "level": "Intermediate",
+      "price": 30,
+      "rating": 4.7
+    },
+    {
+      "id": 5,
+      "name": "Ruby",
+      "lesson": 12,
+      "level": "Beginner",
+      "price": 80,
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "name": "HTML/CSS",
+      "lesson": 8,
+      "level": "Intermediate",
+      "price": 50,
+      "rating": 4.4
+    }
+  ]
+}
