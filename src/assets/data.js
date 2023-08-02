@@ -3,6 +3,7 @@ export const courses = [
   {
     "id": 31,
     "name": "Python",
+    "image": require("./images/python.png"),
     "lesson": 10,
     "level": "Beginner",
     "price": 60,
@@ -12,6 +13,7 @@ export const courses = [
   {
     "id": 32,
     "name": "JavaScript",
+    "image": require("./images/javascript.png"),
     "lesson": 15,
     "level": "Advanced",
     "price": 100,
@@ -21,6 +23,7 @@ export const courses = [
   {
     "id": 33,
     "name": "Java",
+    "image": require("./images/java.png"),
     "lesson": 5,
     "level": "Expert",
     "price": 150,
@@ -30,6 +33,7 @@ export const courses = [
   {
     "id": 34,
     "name": "C++",
+    "image": require("./images/c.png"),
     "lesson": 20,
     "level": "Intermediate",
     "price": 30,
@@ -39,6 +43,7 @@ export const courses = [
   {
     "id": 35,
     "name": "Ruby",
+    "image": require("./images/ruby.png"),
     "lesson": 12,
     "level": "Beginner",
     "price": 80,
@@ -48,6 +53,7 @@ export const courses = [
   {
     "id": 36,
     "name": "HTML/CSS",
+    "image": require("./images/htmlcss2.png"),
     "lesson": 8,
     "level": "Intermediate",
     "price": 50,
@@ -80,34 +86,6 @@ export const accordionData = [
   }
 ];
 
-// stats section object
-export const stats = [
-  {
-    id: 11,
-    value: "19.3K",
-    content: "student enrolled",
-    color: "cyan"
-  },
-  {
-    id: 12,
-    value: "12.4K",
-    content: "class completed",
-    color: "red"
-  },
-  {
-    id: 13,
-    value: "100%",
-    content: "satisfaction rate",
-    color: "purple"
-  },
-  {
-    id: 14,
-    value: "300+",
-    content: "top instructors",
-    color: "orange"
-  }
-];
-
 // features section object
 export const features = [
   {
@@ -137,5 +115,33 @@ export const features = [
     color: "orange",
     title: "6000k+ Members",
     content: "Join Our 6,000k+ Strong Community: Learn and Grow Together"
+  }
+];
+
+// footer social icons
+export const socialIcons = [
+  {
+    id: 61,
+    icon: "logo-facebook",
+    color: "blue",
+    link: "https://www.facebook.com"
+  },
+  {
+    id: 62,
+    icon: "logo-twitter",
+    color: "dodgerblue",
+    link: "https://www.twitter.com"
+  },
+  {
+    id: 63,
+    icon: "logo-instagram",
+    color: "hotpink",
+    link: "https://www.instagram.com"
+  },
+  {
+    id: 64,
+    icon: "logo-linkedin",
+    color: "deepskyblue",
+    link: "https://www.linkedin.com"
   }
 ];
