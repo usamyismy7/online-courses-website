@@ -118,6 +118,60 @@ export const features = [
   }
 ];
 
+// nav links object
+export const navLinks = {
+  hrefs: {
+    home: {
+      id: 41,
+      name: "Home",
+      link: "#home"
+    },
+    courses: {
+      id: 42,
+      name: "Courses",
+      link: "#courses"
+    },
+    faqs: {
+      id: 43,
+      name: "FAQs",
+      link: "#faqs"
+    },
+    contact: {
+      id: 44,
+      name: "Contact",
+      link: "#contact"
+    },
+  },
+  links: {
+    id: 48,
+    name: "Apply",
+    link: "/apply"
+  }
+};
+
+// footer upper container
+export const footerUpper = {
+  part1: {
+    image: "logo-hd.png",
+    content: "3DSOLUTIONS is a software development agency providing end-to-end solutions, from the raw idea to final product deployment, and services in the global software marketplace since 2019. We are excited to announce that we have expanded our offerings to include online programming courses on our website."
+  },
+  part2: {
+    heading: "Courses",
+    links: ["Python", "JavaScript", "Java", "C++", "Ruby", "HTML/CSS"],
+    hrefs: ["#courses", "#courses", "#courses", "#courses", "#courses", "#courses"]
+  },
+  part3: {
+    heading: "Certifications",
+    links: ["Certificate Programs", "Verified Certificates", "Accreditation"],
+    hrefs: ["#", "#", "#"]
+  },
+  part4: {
+    heading: "Support",
+    links: ["Help Center", "Contact Us", "FAQs"],
+    hrefs: ["#", "#contact", "#faqs"]
+  }
+}
+
 // footer social icons
 export const socialIcons = [
   {

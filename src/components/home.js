@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // local data and modules imports
-import { courses, features, accordionData } from '../assets/data';
+import { courses, features, accordionData, navLinks, socialIcons, footerUpper } from '../assets/data';
 import { SearchPage, FaqsAccordion, CourseAccordion } from '../assets/modules';
 
 function HomePage() {
@@ -14,17 +14,23 @@ function HomePage() {
 
                 {/* logo */}
                 <div className="flex justify-center py-2">
-                    {/* <p className="font-mono text-xl font-black">3dSolutions</p> */}
                     <img src="logo-hd.png" alt="logo" height="25px" width="175px" />
                 </div>
 
                 {/* nav links */}
                 <div className="grid grid-cols-5 py-2 mx-8">
-                    <a className="mx-5 font-bold text-center cursor-pointer" href="#home">Home</a>
-                    <a className="mx-5 font-bold text-center cursor-pointer" href="#courses">Courses</a>
-                    <Link to="/apply" className="mx-5 font-bold text-center cursor-pointer">Apply</Link>
-                    <a className="mx-5 font-bold text-center cursor-pointer" href="#faqs">FAQs</a>
-                    <a className="mx-5 font-bold text-center cursor-pointer" href="#contact">Contact</a>
+                    {
+                        Object.keys(navLinks.hrefs).map((key) => {
+                            const { name, link } = navLinks.hrefs[key];
+                            return (
+                                <div key={key}>
+                                    <a className="mx-5 font-bold text-center cursor-pointer" href={link}>{name}</a>
+                                </div>
+                            )
+                        })}
+                    <Link to={navLinks.links.link} className="mx-5 font-bold text-center cursor-pointer">
+                        {navLinks.links.name}
+                    </Link>
                 </div>
 
                 {/* search box */}
@@ -135,7 +141,7 @@ function HomePage() {
                 </div >
 
                 {/* right div image */}
-                <div div className='hidden w-0 mt-20 lg:w-1/2 lg:block lg:bg-opacity-60' >
+                <div className='hidden w-0 mt-20 lg:w-1/2 lg:block lg:bg-opacity-60' >
                     <img src={require("../assets/images/sir.png")} className="absolute" style={{ height: "80%", right: "5%" }} alt="Hero"
                     />
                 </div >
@@ -195,75 +201,53 @@ function HomePage() {
             < footer className="text-gray-600 body-font" >
 
                 {/* upper container */}
-                < div className="container flex flex-col flex-wrap px-10 py-24 mx-auto bg-gray-200 md:items-center lg:items-start md:flex-row md:flex-nowrap" >
-
+                <div className="container flex flex-col flex-wrap px-10 py-24 mx-auto bg-gray-200 md:items-center lg:items-start md:flex-row md:flex-nowrap">
                     {/* part 1 */}
-                    <div div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left" >
+                    <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
                         <div className="flex items-center justify-center font-medium text-gray-900 cursor-pointer title-font md:justify-start">
-                            <img src="logo-hd.png" alt="logo" height="35px" width="175px" />
+                            <img src={footerUpper.part1.image} alt="logo" height="35px" width="175px" />
                         </div>
-                        <p className="mt-2 ml-2 text-sm text-gray-500">3DSOLUTIONS is a software development agency providing end-to-end solutions, from the raw idea to final product deployment, and services in the global software marketplace since 2019. We are excited to announce that we have expanded our offerings to include online programming courses on our website.</p>
-                    </div >
+                        <p className="mt-2 ml-2 text-sm text-gray-500">{footerUpper.part1.content}</p>
+                    </div>
 
                     {/* part 2 */}
-                    <div div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left" >
+                    <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
                         <div className="w-full px-4 lg:w-1/3">
-                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">Courses</h2>
+                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">{footerUpper.part2.heading}</h2>
                             <nav className="mb-10 list-none">
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">Python</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">JavaScript</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">Java</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">C++</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">Ruby</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#courses">HTML/CSS</a>
-                                </li>
+                                {footerUpper.part2.links.map((link, index) => (
+                                    <li key={link} className="mb-2">
+                                        <a className="text-gray-600 hover:text-gray-800" href={footerUpper.part2.hrefs[index]}>{link}</a>
+                                    </li>
+                                ))}
                             </nav>
                         </div>
 
                         {/* part 3 */}
                         <div className="w-full px-4 lg:w-1/3">
-                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">Certifications</h2>
+                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">{footerUpper.part3.heading}</h2>
                             <nav className="mb-10 list-none">
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="/">Certificate Programs</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="/">Verified Certificates</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="/">Accreditation</a>
-                                </li>
+                                {footerUpper.part3.links.map((link, index) => (
+                                    <li key={link} className="mb-2">
+                                        <a className="text-gray-600 hover:text-gray-800" href={footerUpper.part3.hrefs[index]}>{link}</a>
+                                    </li>
+                                ))}
                             </nav>
                         </div>
 
                         {/* part 4 */}
                         <div className="w-full px-4 lg:w-1/3">
-                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">Support</h2>
+                            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">{footerUpper.part4.heading}</h2>
                             <nav className="mb-10 list-none">
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="/">Help Center</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#contact">Contact Us</a>
-                                </li>
-                                <li className="mb-2">
-                                    <a className="text-gray-600 hover:text-gray-800" href="#faqs">FAQs</a>
-                                </li>
+                                {footerUpper.part4.links.map((link, index) => (
+                                    <li key={link} className="mb-2">
+                                        <a className="text-gray-600 hover:text-gray-800" href={footerUpper.part4.hrefs[index]}>{link}</a>
+                                    </li>
+                                ))}
                             </nav>
                         </div>
-                    </div >
-                </div >
+                    </div>
+                </div>
 
                 {/* lower container */}
                 <div className="bg-gray-300" >
@@ -271,18 +255,11 @@ function HomePage() {
                         <p className="text-sm text-center text-gray-500 sm:text-left">© 2023 3DSOLUTIONS - All Rights Resersed
                         </p>
                         <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
-                            <a className="text-gray-500" href='/'>
-                                <ion-icon name="logo-facebook" style={{ fontSize: 24 }}></ion-icon>
-                            </a>
-                            <a className="ml-5 text-gray-500" href="/">
-                                <ion-icon name="logo-twitter" style={{ fontSize: 24 }}></ion-icon>
-                            </a>
-                            <a className="ml-5 text-gray-500" href="/">
-                                <ion-icon name="logo-instagram" style={{ fontSize: 24 }}></ion-icon>
-                            </a>
-                            <a className="ml-5 text-gray-500" href="/">
-                                <ion-icon name="logo-linkedin" style={{ fontSize: 24 }}></ion-icon>
-                            </a>
+                            {socialIcons.map((icon) => (
+                                <a key={icon.id} className="text-gray-500 ml-5" href={icon.link}>
+                                    <ion-icon name={icon.icon} style={{ fontSize: 24, color: icon.color }}></ion-icon>
+                                </a>
+                            ))}
                         </span>
                     </div>
                 </div >
