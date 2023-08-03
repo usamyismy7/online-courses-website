@@ -2,14 +2,46 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ApplyPage = () => {
+    // Assuming this function is called when the user clicks the submit button
+    async function handleSubmitForm(event) {
+        event.preventDefault(); // Prevent form submission to handle it manually
+
+        const formData = {
+            name: event.target.name.value,
+            email: event.target.email.value,
+            course: event.target.course.value,
+            phone: event.target.phone.value,
+            message: event.target.message.value,
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/submitApplication', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data.message); // Success message from the server
+            } else {
+                console.error('Failed to submit application.');
+            }
+        } catch (error) {
+            console.error('Error submitting application:', error);
+        }
+    }
+
     return (
         <div className="min-h-screen bg-gray-100">
-            <div className="container mx-auto p-8">
-                <h1 className="text-4xl font-bold mb-4">Apply for our Programming Courses</h1>
-                <p className="text-gray-600 mb-8">Please fill out the form below to apply for our courses.</p>
-                <form className="max-w-lg mx-auto">
+            <div className="container p-8 mx-auto">
+                <h1 className="mb-4 text-4xl font-bold">Apply for our Programming Courses</h1>
+                <p className="mb-8 text-gray-600">Please fill out the form below to apply for our courses.</p>
+                <form className="max-w-lg mx-auto" onSubmit={handleSubmitForm}>
                     <div className="mb-4">
-                        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+                        <label htmlFor="name" className="block mb-2 font-bold text-gray-700">
                             Full Name:
                         </label>
                         <input
@@ -21,7 +53,7 @@ const ApplyPage = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                        <label htmlFor="email" className="block mb-2 font-bold text-gray-700">
                             Email Address:
                         </label>
                         <input
@@ -33,7 +65,7 @@ const ApplyPage = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
+                        <label htmlFor="phone" className="block mb-2 font-bold text-gray-700">
                             Phone Number:
                         </label>
                         <input
@@ -45,7 +77,7 @@ const ApplyPage = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="course" className="block text-gray-700 font-bold mb-2">
+                        <label htmlFor="course" className="block mb-2 font-bold text-gray-700">
                             Course Interested In:
                         </label>
                         <select
@@ -65,7 +97,7 @@ const ApplyPage = () => {
                         </select>
                     </div>
                     <div className="mb-8">
-                        <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+                        <label htmlFor="message" className="block mb-2 font-bold text-gray-700">
                             Why do you want to take this course?
                         </label>
                         <textarea
@@ -78,11 +110,11 @@ const ApplyPage = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-teal-400 text-white py-3 px-4 rounded-lg hover:bg-teal-500 focus:outline-none focus:ring focus:ring-3 ring-teal-300"
+                        className="w-full px-4 py-3 text-white bg-teal-400 rounded-lg hover:bg-teal-500 focus:outline-none focus:ring focus:ring-3 ring-teal-300"
                     >
                         Submit Application
                     </button>
-                    <Link to="/" className="fixed bottom-4 right-4 bg-teal-600 text-white py-3 px-4 rounded-lg hover:bg-teal-700 focus:outline-none">
+                    <Link to="/" className="fixed px-4 py-3 text-white bg-teal-600 rounded-lg bottom-4 right-4 hover:bg-teal-700 focus:outline-none">
                         Back to Homepage
                     </Link>
                 </form>
