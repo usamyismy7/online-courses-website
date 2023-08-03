@@ -167,8 +167,8 @@ export const footerUpper = {
   },
   part4: {
     heading: "Support",
-    links: ["Help Center", "Contact Us", "FAQs"],
-    hrefs: ["#", "#contact", "#faqs"]
+    links: ["FAQs", "Contact Us", "F-8 markaz, Islamabad", "3dsolutions.official@gmail.com", "+92 302 5834392"],
+    hrefs: ["#faqs", "#contact"]
   }
 }
 

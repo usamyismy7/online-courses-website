@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PaymentAccordion } from '../assets/modules';
 
 const ApplyPage = () => {
     // Assuming this function is called when the user clicks the submit button
@@ -95,6 +96,12 @@ const ApplyPage = () => {
                             <option value="ruby">Ruby</option>
                             <option value="html/css">HTML/CSS</option>
                         </select>
+                    </div>
+                    <div className="mb-8">
+                        <label htmlFor="payment" className="block mb-2 font-bold text-gray-700">
+                            Payment Method:
+                        </label>
+                        <PaymentAccordion />
                     </div>
                     <div className="mb-8">
                         <label htmlFor="message" className="block mb-2 font-bold text-gray-700">

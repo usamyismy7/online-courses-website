@@ -156,3 +156,68 @@ export const FaqsAccordion = ({ id, title, content }) => {
         </div>
     );
 };
+
+// payment method accordion component
+// courses accordion component
+export function PaymentAccordion() {
+    const [hovered, setHovered] = useState(false);
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+    const [isHovered, setIsHovered] = useState(false);
+    const handleMouseEnter1 = () => {
+        setIsHovered(true)
+    }
+    const handleMouseLeave1 = () => {
+        setIsHovered(false);
+    };
+    return (
+        <div className="grid grid-cols-2">
+            <div className="relative col-span-1">
+                <div className="w-fit">
+                    <div className="mt-4">
+                        <div className='flex flex-row justify-between gap-32 mt-3'>
+                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-gray-100 bg-teal-400 rounded-md hover:bg-teal-500" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                <span className="mr-2">Online Banking</span>
+                                <span>
+                                    {
+                                        hovered ? <ion-icon name="chevron-up-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon> : <ion-icon name="chevron-down-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon>
+                                    }
+                                </span>
+                            </button>
+                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-gray-100 bg-teal-400 rounded-md hover:bg-teal-500" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
+                                <span className="mr-2">Mobile Payment</span>
+                                <span>
+                                    {
+                                        isHovered ? <ion-icon name="chevron-up-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon> : <ion-icon name="chevron-down-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon>
+                                    }
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="">
+                        <div className={`absolute border z-10 w-96 h-fit mt-1 bg-white rounded-lg shadow-lg p-4 ${hovered ? "block" : "hidden"}`}>
+                            <div className='flex flex-col items-start justify-start'>
+                                <p className='text-gray-500 text-md'>If you want to transfer the payment amount via your bank account, you can make a direct bank transfer to the following account:</p>
+                                <p className='text-gray-500 text-md'>• WebSouls, Habib Bank Ltd., A/C No. 01957900259103, Cavalry Ground Branch, LAHORE</p>
+                                <p className='text-gray-500 text-md'>Note: Kindly inform us after making a successful payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="">
+                        <div className={`absolute border -right-full z-10 w-96 h-fit mt-1 bg-white rounded-lg shadow-lg p-4 ${isHovered ? "block" : "hidden"}`}>
+                            <div className='flex flex-col items-start justify-start'>
+                                <p className='text-gray-500 text-md'>To pay for any of our services via a mobile app, you can make a payment through Easy Paisa, Mobi Cash, Warid Paisa, U-Paisa, Time Pay, UBL Omni, or HBL Express. Our bank account details are:</p>
+                                <p className='text-gray-500 text-md'>• Bank Account: WebSouls, Habib Bank Ltd., A/C No. 01957900259103, Cavalry Ground Branch, LAHORE</p>
+                                <p className='text-gray-500 text-md'>Note: Kindly inform us after making a successful payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div >
+        </div>
+    );
+}
