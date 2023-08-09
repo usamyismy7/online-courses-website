@@ -145,7 +145,7 @@ export const navLinks = {
   links: {
     id: 48,
     name: "Apply",
-    link: "/apply"
+    link: "/applyTeacher"
   }
 };
 

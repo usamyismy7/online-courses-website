@@ -97,7 +97,7 @@ export function CourseAccordion({ item }) {
                                 }
                             </span>
                         </button>
-                        <Link to="/apply">
+                        <Link to="/applyStudent">
                             <button className="flex items-center justify-center w-32 h-12 px-8 py-2 text-lg text-gray-100 bg-teal-600 rounded-md hover:bg-teal-700">
                                 <span>Enroll</span>
                             </button>
@@ -158,7 +158,6 @@ export const FaqsAccordion = ({ id, title, content }) => {
 };
 
 // payment method accordion component
-// courses accordion component
 export function PaymentAccordion() {
     const [hovered, setHovered] = useState(false);
     const handleMouseEnter = () => {
@@ -180,21 +179,13 @@ export function PaymentAccordion() {
                 <div className="w-fit">
                     <div className="mt-4">
                         <div className='flex flex-row justify-between gap-32 mt-3'>
-                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-gray-100 bg-teal-400 rounded-md hover:bg-teal-500" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-white bg-teal-500 rounded-md hover:bg-teal-600" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                 <span className="mr-2">Online Banking</span>
-                                <span>
-                                    {
-                                        hovered ? <ion-icon name="chevron-up-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon> : <ion-icon name="chevron-down-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon>
-                                    }
-                                </span>
+                                <ion-icon name="card-outline" style={{ fontSize: 22 }}></ion-icon>
                             </button>
-                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-gray-100 bg-teal-400 rounded-md hover:bg-teal-500" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
+                            <button className="flex flex-row items-center justify-center w-48 h-12 text-lg text-white bg-blue-500 rounded-md hover:bg-blue-600" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
                                 <span className="mr-2">Mobile Payment</span>
-                                <span>
-                                    {
-                                        isHovered ? <ion-icon name="chevron-up-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon> : <ion-icon name="chevron-down-outline" style={{ fontSize: 16, color: "gainsboro" }}></ion-icon>
-                                    }
-                                </span>
+                                <ion-icon name="phone-portrait-outline" style={{ fontSize: 22 }}></ion-icon>
                             </button>
                         </div>
                     </div>
