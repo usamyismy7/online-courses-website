@@ -10,7 +10,7 @@ function HomePage() {
         <div className="bg-gray-100">
 
             {/* Navbar Section */}
-            <nav className="grid grid-cols-[25%_50%_25%] pt-2 pb-1" section="true">
+            <nav className="grid grid-cols-[25%_50%_25%] pt-2 pb-1">
 
                 {/* logo */}
                 <div className="flex justify-center py-2">
@@ -98,7 +98,7 @@ function HomePage() {
             </section >
 
             {/* courses section */}
-            <section section className="text-gray-600 body-font" id="courses">
+            <section className="text-gray-600 body-font" id="courses">
                 <div className="container px-24 py-24">
 
                     {/* headings */}
@@ -124,8 +124,8 @@ function HomePage() {
                 < div className="w-[95vw] px-24 py-24" >
 
                     {/* headings */}
-                    <h3 h3 className="mb-1 text-sm tracking-widest text-gray-500 uppercase text-start title-font" >FAQ's</h3>
-                    <h1 h1 className="text-3xl font-semibold text-start" >Frequently Asked Questions.</h1 >
+                    <h3 className="mb-1 text-sm tracking-widest text-gray-500 uppercase text-start title-font" >FAQ's</h3>
+                    <h1 className="text-3xl font-semibold text-start" >Frequently Asked Questions.</h1 >
                     <div className="flex items-center justify-start mt-2">
                         <div className="w-20 h-2 my-2 bg-teal-500 rounded-full"></div>
                     </div>
@@ -148,11 +148,11 @@ function HomePage() {
             </section >
 
             {/* contact us section */}
-            <section class="text-gray-600 body-font relative" id="contact">
-                <div class="container px-5 py-24 mx-auto">
+            <section className="relative text-gray-600 body-font" id="contact">
+                <div className="container px-5 py-24 mx-auto">
 
                     {/* headings */}
-                    <h3 h3 className="mb-1 text-sm tracking-widest text-center text-gray-500 uppercase title-font" >Let's Chat</h3>
+                    <h3 className="mb-1 text-sm tracking-widest text-center text-gray-500 uppercase title-font" >Let's Chat</h3>
                     <h1 className="text-3xl font-semibold text-center">Contact Us</h1>
                     <div className="flex items-center justify-center">
                         <div className="w-20 h-2 my-2 bg-teal-500 rounded-full"></div>
@@ -160,33 +160,33 @@ function HomePage() {
                     <h3 className="my-2 text-sm tracking-widest text-center text-gray-400">Connect with Our Team for Personalized Assistance</h3>
 
                     {/* contact us */}
-                    <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                        <div class="flex flex-wrap -m-2">
-                            <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                    <div className="mx-auto lg:w-1/2 md:w-2/3">
+                        <div className="flex flex-wrap -m-2">
+                            <div className="w-1/2 p-2">
+                                <div className="relative">
+                                    <label htmlFor="name" className="text-sm leading-7 text-gray-600">Name</label>
+                                    <input type="text" id="name" name="name" className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" />
                                 </div>
                             </div>
-                            <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="phone" class="leading-7 text-sm text-gray-600">Phone</label>
-                                    <input type="phone" id="phone" name="phone" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="w-1/2 p-2">
+                                <div className="relative">
+                                    <label htmlFor="phone" className="text-sm leading-7 text-gray-600">Phone</label>
+                                    <input type="phone" id="phone" name="phone" className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" />
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
-                                <div class="relative">
-                                    <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="w-full p-2">
+                                <div className="relative">
+                                    <label htmlFor="email" className="text-sm leading-7 text-gray-600">Email</label>
+                                    <input type="email" id="email" name="email" className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" />
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
-                                <div class="relative">
-                                    <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                                    <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                            <div className="w-full p-2">
+                                <div className="relative">
+                                    <label htmlFor="message" className="text-sm leading-7 text-gray-600">Message</label>
+                                    <textarea id="message" name="message" className="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"></textarea>
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
+                            <div className="w-full p-2">
                                 <button className="flex items-center justify-center px-8 py-2 mx-auto text-lg text-gray-100 bg-teal-500 rounded-md focus:ring focus:ring-3 ring-teal-300 hover:bg-teal-600">
                                     <span className="mr-2">Get in Touch</span>
                                     <ion-icon name="arrow-forward-outline" style={{ fontSize: 20, color: "gainsboro" }}></ion-icon>
@@ -256,7 +256,7 @@ function HomePage() {
                         </p>
                         <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                             {socialIcons.map((icon) => (
-                                <a key={icon.id} className="text-gray-500 ml-5" href={icon.link}>
+                                <a key={icon.id} className="ml-5 text-gray-500" href={icon.link}>
                                     <ion-icon name={icon.icon} style={{ fontSize: 24, color: icon.color }}></ion-icon>
                                 </a>
                             ))}
